@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+    <h1><%= title %></h1>
+    <p>
+        Posted by <%= name %>
+    </p>
+    <p><%= content %></p>
+    <img src="<%= imagePath%>" width="500">
+    <div class="container d-flex gap-3 justify-content-center">
+        <form action="/edit/<%=title%>" method="get">
+            <button type="submit"  class="btn" >Edit</button>
+        </form>
+
+        <form action="/delete/<%=title%>" method="post">
+            <button type="submit" class="btn" onclick="return confirm('Are you sure you want to delete this?')">Delete</button>
+        </form>
+    </div>
+<%- include("partials/footer.ejs") %>

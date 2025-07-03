@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+<h1 class="my-3">Edit</h1>
+<form action="/edit/<%= editTitle %>" method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="titleText">Title</label>
+        <input type="text" class="form-control" name="editedTitle" value="<%= editTitle %>">
+    </div>
+    <div class="mb-3">
+        <label for="nameText">Your Name</label>
+        <input type="text" class="form-control" name="editedName" value="<%= editName %>">
+    </div>
+    <div class="mb-3">
+        <label for="postText">Post</label>
+        <textarea class="form-control" name="editedText" cols="30" rows="5">
+            <%= editContent%>
+        </textarea>
+    </div>
+    <div class="mb-3">
+        <label for="imagePost" class="form-label">Do you have a photo? You can insert it here</label>
+        <input class="form-control" type="file" id="imagePost" name="editedImage" accept="image/*">
+    </div>
+    <button type="submit" name="button" class="btn">Publish</button>
+</form>
+<%- include("partials/footer.ejs") %>

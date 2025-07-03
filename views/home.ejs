@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+    <h1 class="my-3">Food for a better mood</h1>
+    <p class="my-4"><%= homeStartingContent %></p>
+
+    <% console.log(posts); %>
+    <% posts.forEach(function(post) { %>
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-lg-8">
+                        <div class="card-body">
+                            <h2 class="card-title"><%= post.title %></h2>
+                            <p class="card-author">Posted by <%= post.name %></p>
+                            <p class="card-text"><%= post.content.substring(0, 100) + "..." %></p>
+                            <a href="/posts/<%=post.title%>">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="<%= post.imagePath%>" alt="image" class="img-fluid rounded-end">
+                    </div>
+                </div>
+            </div>
+    <% }); %>
+<%- include("partials/footer.ejs") %>
